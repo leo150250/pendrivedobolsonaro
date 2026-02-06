@@ -1,0 +1,150 @@
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+#wrapper {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+#fundo {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("bliff.jpg") no-repeat center center fixed;
+	background-size: cover;
+}
+
+#barraTarefas {
+	width: 100%;
+	height: 40px;
+	background: linear-gradient(180deg, #0078D7, #005A9E);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	align-items: stretch;
+	box-sizing: border-box;
+}
+
+#barraTarefas #botaoIniciar {
+	background: radial-gradient(circle at 20% 20%, #15ff00, #008000);
+	font-weight: bolder;
+	font-style: italic;
+	color: white;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 5px;
+	box-shadow: inset -5px 0px 10px #0004;
+	text-shadow: 2px 2px 4px #0006;
+	padding: 0 15px;
+}
+#barraTarefas #botaoIniciar img {
+	width: 32px;
+	height: 32px;
+	margin-right: 5px;
+	filter: drop-shadow(2px 2px 2px #0006);
+}
+
+#janela {
+	width: 800px;
+	height: 600px;
+	border: 2px outset #0078D7;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+	overflow: hidden;
+	box-sizing: border-box;
+	background-color: #e4e2c7;
+	display: flex;
+	flex-direction: column;
+}
+
+#janela #titulo {
+	flex-basis: 32px;
+	background: linear-gradient(180deg, #0078D7, #005A9E);
+	color: white;
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	border-bottom: 2px outset #0078D7;
+	box-sizing: border-box;
+}
+#janela #titulo .botoes {
+	margin-left: auto;
+	display: flex;
+	align-items: stretch;
+	height: 100%;
+	flex-direction: row-reverse;
+}
+#janela #titulo .botoes button {
+	width: 40px;
+	background: none;
+	border: 1px solid #188dee;
+	background: radial-gradient(circle at 50% 50%, #188dee, #0078D7);
+	border-radius: 3px;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+}
+#janela #titulo .botoes button.fechar {
+	background: radial-gradient(circle at 50% 50%, #f76c77, #c50f1f);
+	border-color: #e81123;
+}
+#janela #barra {
+	flex-basis: 32px;
+	height: 32px;
+	border-bottom: 1px solid #ccc;
+	display: flex;
+	align-items: stretch;
+	padding: 2px 10px;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+}
+#janela #barra button {
+	background-color: #d4d0c8;
+	border: 1px solid #aaa;
+	color: black;
+	cursor: pointer;
+	font-size: 14px;
+	width: 36px;
+}
+#janela #barra input {
+	padding: 4px;
+	margin-left: 5px;
+	font-size: 14px;
+	flex-grow: 1;
+}
+#janela #conteudoJanela {
+	padding: 2px;
+	box-sizing: border-box;
+	display: flex;
+	position: relative;
+	flex-grow: 2;
+}
+#janela #conteudoJanela #listagem {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #aaa;
+	background-color: white;
+	overflow: auto;
+	box-sizing: border-box;
+}
