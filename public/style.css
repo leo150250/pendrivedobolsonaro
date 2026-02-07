@@ -86,6 +86,7 @@ body {
 	font-size: 16px;
 	border-bottom: 2px outset #0078D7;
 	box-sizing: border-box;
+	flex-shrink: 0;
 }
 #janela #titulo .botoes {
 	margin-left: auto;
@@ -118,6 +119,7 @@ body {
 	box-sizing: border-box;
 	font-family: Arial, sans-serif;
 	font-size: 14px;
+	flex-shrink: 0;
 }
 #janela #barra button {
 	background-color: #d4d0c8;
@@ -139,12 +141,72 @@ body {
 	display: flex;
 	position: relative;
 	flex-grow: 2;
+	height: fit-content;
+	overflow: hidden;
+	user-select: none;
 }
 #janela #conteudoJanela #listagem {
-	width: 100%;
+	width: 300px;
 	height: 100%;
 	border: 1px solid #aaa;
 	background-color: white;
 	overflow: auto;
 	box-sizing: border-box;
+	overflow-y: scroll;
+	flex-shrink: 0;
+}
+#listagem .pasta {
+	cursor: pointer;
+}
+#listagem .pasta:hover {
+	text-decoration: underline;
+}
+#listagem .pasta.selecionada {
+	background-color: #0078D7;
+	color: white;
+}
+#listagem .conteudo {
+	margin-left: 5px;
+	padding-left: 5px;
+	border-left: 1px dashed #aaa;
+	display: none;
+}
+#listagem .conteudo.exibir {
+	display: block;
+}
+#janela #conteudoJanela #conteudo {
+	margin-left: 2px;
+	flex-grow: 2;
+	height: 100%;
+	border: 1px solid #aaa;
+	background-color: white;
+	box-sizing: border-box;
+	overflow-y: scroll;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+	align-items: start;
+	align-content: start;
+}
+#conteudo .item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	box-sizing: border-box;
+	cursor: pointer;
+	text-align: center;
+	word-break: break-word;
+}
+#conteudo .item:hover {
+	background-color: #f0f0f0;
+}
+#conteudo .item.selecionado {
+	background-color: #0078D7;
+	color: white;
+}
+#conteudo .item .icone {
+	width: 64px;
+	height: 64px;
+	margin-bottom: 5px;
+	font-size: 48px;
 }
