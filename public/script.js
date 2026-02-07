@@ -173,7 +173,15 @@ class ItemConteudo {
 		this.elItem.onclick = ()=>{
 			selecionarItem(this);
 		}
+		this.elItem.ontouchstart = ()=>{
+			selecionarItem(this);
+		}
 		this.elItem.ondblclick = ()=>{
+			if (!this.arquivo) {
+				this.objeto.exibirConteudo();
+			}
+		}
+		this.elItem.ontouchend = ()=>{
 			if (!this.arquivo) {
 				this.objeto.exibirConteudo();
 			}
