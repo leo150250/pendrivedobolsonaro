@@ -174,15 +174,14 @@ class ItemConteudo {
 			selecionarItem(this);
 		}
 		this.elItem.ontouchstart = ()=>{
+			this.touchMoved = false;
 			selecionarItem(this);
 		}
-		this.elItem.ondblclick = ()=>{
-			if (!this.arquivo) {
-				this.objeto.exibirConteudo();
-			}
+		this.elItem.ontouchmove = ()=>{
+			this.touchMoved = true;
 		}
 		this.elItem.ontouchend = ()=>{
-			if (!this.arquivo) {
+			if (!this.arquivo && !this.touchMoved) {
 				this.objeto.exibirConteudo();
 			}
 		}
