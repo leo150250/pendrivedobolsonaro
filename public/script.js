@@ -170,8 +170,14 @@ class ItemConteudo {
 
 		this.elItem = document.createElement("div");
 		this.elItem.classList.add("item");
+		this.touchMoved = false;
 		this.elItem.onclick = ()=>{
 			selecionarItem(this);
+		}
+		this.elItem.ondblclick = ()=>{
+			if (!this.arquivo && !this.touchMoved) {
+				this.objeto.exibirConteudo();
+			}
 		}
 		this.elItem.ontouchstart = ()=>{
 			this.touchMoved = false;
