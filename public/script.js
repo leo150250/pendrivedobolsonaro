@@ -1,3 +1,39 @@
+const divDataHora = document.getElementById("dataHora");
+
+function atualizarDataHora() {
+	const agora = new Date();
+	const dia = agora.toLocaleDateString('pt-BR');
+	const hora = agora.toLocaleTimeString('pt-BR');
+	divDataHora.innerHTML = `${hora} <br> ${dia}`;
+}
+atualizarDataHora();
+setInterval(atualizarDataHora, 1000);
+
+const divIniciar = document.getElementById("iniciar");
+const divBotaoIniciar = document.getElementById("botaoIniciar");
+var menuIniciarAberto = false;
+
+divBotaoIniciar.onclick = ()=>{
+	if (!menuIniciarAberto) {
+		abrirIniciar();
+	} else {
+		fecharIniciar();
+	}
+}
+
+function abrirIniciar() {
+	menuIniciarAberto = true;
+	divIniciar.classList.add("exibir");
+}
+
+function fecharIniciar() {
+	menuIniciarAberto = false;
+	divIniciar.classList.remove("exibir");
+}
+
+const audioUSBIn = document.getElementById("audioUSBIn");
+const audioUSBOut = document.getElementById("audioUSBOut");
+
 const divListagem = document.getElementById("listagem");
 const divConteudo = document.getElementById("conteudo");
 const inputEndereco = document.getElementById("endereco");
@@ -226,3 +262,18 @@ fetch("conteudo.json")
 			novaPasta.exibirConteudo();
 		}
 	});
+
+function inicializar() {
+	setTimeout(()=>{
+		audioUSBIn.play();
+	},1000);
+	setTimeout(()=>{
+		audioUSBOut.play();
+	},1500);
+	setTimeout(()=>{
+		audioUSBIn.play();
+	},3200);
+	setTimeout(()=>{
+		divJanela.style.display="flex";
+	},3500);
+}

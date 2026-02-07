@@ -4,11 +4,18 @@
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<meta charset="UTF-8">
 	</head>
-	<body>
+	<body onload="inicializar()">
 		<div id="wrapper">
 			<div id="fundo"></div>
 			<div id="barraTarefas">
 				<div id="botaoIniciar"><img src="jails.png">iniciar</div>
+				<div id="janelas"></div>
+				<div id="dataHora"></div>
+				<div id="iniciar">
+					<a href="https://github.com/leo150250/pendrivedobolsonaro" target="_blank">🌐 Abrir este projeto no GitHub...</a>
+					<a href="#" onclick="alert('Projeto criado por leandrogabriel.net.\n\nEsta é uma obra de FICÇÃO e HUMOR, baseada no tal pen-drive que foi pro Catar, e qualquer conteúdo aqui nela não deve ser levado a sério em hipótese alguma, embora seja (porcamente) baseada em acontecimentos reais!\n\nSe quiser contribuir para esta brincadeira, faça um pull request no GitHub!')">ℹ️ Sobre o projeto...</a>
+					<a href="https://leandrogabriel.net" target="_blank">🔗 Site do desenvolvedor...</a>
+				</div>
 			</div>
 			<div id="janela">
 				<div id="titulo">
@@ -34,6 +41,14 @@
 				</div>
 			</div>
 		</div>
+		<audio id="audioUSBIn" preload="auto">
+			<source src="https://www.myinstants.com/media/sounds/windows-xp-device-connect.mp3" type="audio/mpeg">
+				Seu navegador não suporta o elemento de áudio.
+		</audio>
+		<audio id="audioUSBOut" preload="auto">
+			<source src="https://www.myinstants.com/media/sounds/windows-xp-device-disconnect.mp3" type="audio/mpeg">
+				Seu navegador não suporta o elemento de áudio.
+		</audio>
 		<script src="script.js"></script>
 	</body>
 </html>

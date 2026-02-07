@@ -59,6 +59,51 @@ body {
 	filter: drop-shadow(2px 2px 2px #0006);
 }
 
+#barraTarefas #dataHora {
+	color: #FFF;
+	background-color: #0002;
+	border-left: 2px groove #005A9E;
+	padding: 5px 10px;
+	text-align: right;
+	font-size: 12px;
+}
+
+#barraTarefas #janelas {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+#iniciar {
+	position: absolute;
+	bottom: 40px;
+	left: 10px;
+	background-color: #fff;
+	border: 1px solid #aaa;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+	display: none;
+	flex-direction: column;
+	border-left: 10px solid #0078D7;
+	z-index: 100;
+}
+
+#iniciar.exibir {
+	display: flex;
+}
+
+#iniciar > a {
+	color: #000;
+	text-decoration: none;
+	padding: 20px 10px;
+	font-size: 16px;
+}
+#iniciar > a:hover {
+	background-color: #f0f0f0;
+}
+
 #janela {
 	width: 800px;
 	height: 600px;
@@ -71,8 +116,9 @@ body {
 	overflow: hidden;
 	box-sizing: border-box;
 	background-color: #e4e2c7;
-	display: flex;
+	display: none;
 	flex-direction: column;
+	user-select: none;
 }
 
 #janela #titulo {
